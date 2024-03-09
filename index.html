@@ -54,7 +54,7 @@
 
         .right_container {
             position: relative;
-            background: #fff;
+            background: #e4e5e9;
             padding: 40px;
         }
 
@@ -78,7 +78,7 @@
         .detail,
         .contact,
         .social {
-            padding: 80px 0;
+            padding: 40px 0;
             width: 100%;
         }
 
@@ -173,6 +173,122 @@
             padding-top: 10px;
             color: #c2ab87;
         }
+
+        .profile-introduction,
+        .personal-skills,
+        .softwares,
+        .experience,
+        .educational,
+        .hobbies_interests {
+            padding-bottom: 50px;
+        }
+
+        .title {
+            font-weight: 600;
+            color: #6a5b46;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .title::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1.5px;
+            background: #88725e;
+            background-size: 100%;
+            bottom: 0;
+            border-radius: 20px;
+        }
+
+        .skill,
+        .edu_summary {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .fa-circle,
+        .icon_right {
+            padding-right: 10px;
+            padding-bottom: 8px;
+            color: #97866d;
+            font-size: 16px;
+        }
+
+        .icon_right {
+            color: #6a5b46;
+        }
+
+        .rate {
+            padding-left: 15px;
+        }
+
+        .icon_rate {
+            padding-bottom: 8px;
+            color: #97866d;
+            font-size: 18px;
+        }
+
+        .icon_rate_light {
+            padding-bottom: 8px;
+            color: #c89e5b;
+            font-size: 18px;
+        }
+
+        .skill_content,
+        .profile_content,
+        .grid_softwares,
+        .educational_content {
+            padding-top: 10px;
+        }
+
+        .softwares-skills {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 90px auto auto;
+            grid-column-gap: 10px;
+        }
+
+        .grid_softwares {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 20px;
+        }
+
+        .right_text,
+        .edu_text {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #97866d;
+            padding-bottom: 8px;
+        }
+
+        .edu_text {
+            padding-bottom: 10px;
+        }
+
+        .hobbies_content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+        .hobby {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            width: 20%;
+        }
+
+        .icon_hobby {
+            font-size: 3rem;
+            color: #97866d;
+            padding-bottom: 10px;
+
+        }
     </style>
 </head>
 
@@ -181,10 +297,10 @@
     <div class="container">
         <div class="left_container">
             <div class="profile">
-                <div class="imgBx">
+                <!-- <div class="imgBx">
                     <img src="data:image/jpeg;base64,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"
                         alt="">
-                </div>
+                </div> -->
                 <div class="detail">
                     <h2 class="left_side">PERSONAL DETAILS</h2>
                     <div class="birthday-detail">
@@ -278,7 +394,176 @@
             </div>
         </div>
         <div class="right_container">
-            
+            <div class="profile-introduction">
+                <h2 class="title">PROFILE INTRODUCTION</h2>
+                <div class="profile_content">
+                    <p class="right_text">As a third-year student with Fullstack knowledge, I am seeking an internship
+                        opportunity to specialize in FrontEnd development.</p>
+                </div>
+            </div>
+            <div class="personal-skills">
+                <h2 class="title">PERSONAL SKILLS</h2>
+                <div class="skill_content">
+                    <div class="skill">
+                        <i class="fa-regular fa-circle"></i>
+                        <p class="right_text">Adaptable to shifting academic priorities</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fa-regular fa-circle"></i>
+                        <p class="right_text">Highly developed written & verbal communication skills</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fa-regular fa-circle"></i>
+                        <p class="right_text">Ability to build relationships with work colleagues.</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fa-regular fa-circle"></i>
+                        <p class="right_text">Pragmatic and having a can do' attitude.</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fa-regular fa-circle"></i>
+                        <p class="right_text">Ability to multi task in an ever-changing environment.</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fa-regular fa-circle"></i>
+                        <p class="right_text">Can work well under pressure.</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fa-regular fa-circle"></i>
+                        <p class="right_text">Strong sense of responsibility & desire to get things done properly.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="softwares">
+                <h2 class="title">SOFTWARES SKILLS</h2>
+                <div class="grid_softwares">
+                    <div class="softwares-skills">
+                        <p class="right_text">HTML,CSS</p>
+                        <div class="rate">
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                        </div>
+                    </div>
+                    <div class="softwares-skills">
+                        <p class="right_text">JavaScript</p>
+                        <div class="rate">
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate_light"></i>
+                        </div>
+                    </div>
+                    <div class="softwares-skills">
+                        <p class="right_text">SASS</p>
+                        <div class="rate">
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate_light"></i>
+                            <i class="fa-solid fa-diamond icon_rate_light"></i>
+                        </div>
+                    </div>
+                    <div class="softwares-skills">
+                        <p class="right_text">React</p>
+                        <div class="rate">
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate_light"></i>
+                        </div>
+                    </div>
+                    <div class="softwares-skills">
+                        <p class="right_text">ES6</p>
+                        <div class="rate">
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate_light"></i>
+                        </div>
+                    </div>
+                    <div class="softwares-skills">
+                        <p class="right_text">TypeScript</p>
+                        <div class="rate">
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate"></i>
+                            <i class="fa-solid fa-diamond icon_rate_light"></i>
+                            <i class="fa-solid fa-diamond icon_rate_light"></i>
+                            <i class="fa-solid fa-diamond icon_rate_light"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="experience">
+                <h2 class="title">WORK EXPERIENCE</h2>
+                <div class="skill_content">
+                    <div class="skill">
+                        <p class="right_text">Adaptable to shifting academic priorities</p>
+                    </div>
+                    <div class="skill">
+                        <p class="right_text">Highly developed written & verbal communication skills</p>
+                    </div>
+                    <div class="skill">
+                        <p class="right_text">Ability to build relationships with work colleagues.</p>
+                    </div>
+                    <div class="skill">
+                        <p class="right_text">Pragmatic and having a can do' attitude.</p>
+                    </div>
+                    <div class="skill">
+                        <p class="right_text">Ability to multi task in an ever-changing environment.</p>
+                    </div>
+                    <div class="skill">
+                        <p class="right_text">Can work well under pressure.</p>
+                    </div>
+                    <div class="skill">
+                        <p class="right_text">Strong sense of responsibility & desire to get things done properly.</p>
+                    </div>
+                </div>
+            </div> -->
+            <div class="educational">
+                <h2 class="title">EDUCATIONAL SUMMARY</h2>
+                <div class="educational_content">
+                    <div class="edu_summary">
+                        <i class="fa-solid fa-diamond icon_right"></i>
+                        <p class="edu_text">PROFESSIONAL FRONT-END DEVELOPER</p>
+                    </div>
+                    <div class="edu_summary">
+                        <i class="fa-solid fa-diamond icon_right"></i>
+                        <p class="edu_text">PROFESSIONAL NODE JS DEVELOPER</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hobbies_interests">
+                <h2 class="title">HOBBIES AND INTERESTS</h2>
+                <div class="hobbies_content">
+                    <div class="hobby">
+                        <i class="fa-solid fa-camera icon_hobby"></i>
+                        <p class="right_text">PHOTOGRAPHY</p>
+                    </div>
+                    <div class="hobby">
+                        <i class="fa-solid fa-gamepad icon_hobby"></i>
+                        <p class="right_text">GAMES</p>
+                    </div>
+                    <div class="hobby">
+                        <i class="fa-solid fa-music icon_hobby"></i>
+                        <p class="right_text">MUSIC</p>
+                    </div>
+                    <div class="hobby">
+                        <i class="fa-solid fa-mug-hot icon_hobby"></i>
+                        <p class="right_text">CAFFE</p>
+                    </div>
+                    <div class="hobby">
+                        <i class="fa-solid fa-volleyball icon_hobby"></i>
+                        <p class="right_text">SPORT</p>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 </body>
